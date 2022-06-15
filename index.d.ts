@@ -54,6 +54,19 @@ declare class IOHook extends EventEmitter {
   disableClickPropagation(): void;
 
   /**
+   * Enable keyboard propagation (enabled by default).
+   * The keyboard event are emitted and propagated.
+   */
+  enableKeyboardPropagation(): void;
+
+  /**
+   * Disable keyboard propagation.
+   * The keyboard event are captured and the event emitted but not
+   propagated to the window 
+   */
+  disableKeyboardPropagation(): void;
+
+  /**
    * Register global shortcut. When all keys in keys array pressed, callback will be called
    * @param {Array<string|number>} keys Array of keycodes
    * @param {Function} callback Callback for when shortcut pressed
